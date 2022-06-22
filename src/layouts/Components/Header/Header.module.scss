@@ -1,0 +1,82 @@
+.wrapper {
+    --search-boder-radius: 92px;
+    --search-top-spacer: 9px;
+    --search-height: 46px;
+    height: var(--default-layout-header-height);
+    width: 100%;
+    box-shadow: 0px 1px 1px rgb(0 0 0 / 12%);
+
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 10;
+    background-color: var(--white);
+}
+.inner {
+    width: var(--default-layout-width);
+    height: 100%;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 24px;
+}
+.logo-link {
+    display: flex;
+}
+// .logo {
+// }
+
+// .custom-logins {
+//     color: green;
+// }
+
+// Action
+.actions {
+    display: flex;
+    align-items: center;
+}
+// menu items
+.more-btn {
+    font-size: 2rem;
+    margin-left: 24px;
+    background-color: transparent;
+    padding: 4px 8px;
+    cursor: pointer;
+}
+
+// lúc đã login
+.action-btn {
+    background-color: transparent;
+    font-size: 2.2rem;
+    color: #161823;
+    padding: 4px 16px;
+    cursor: pointer;
+    position: relative;
+}
+
+.notification {
+    position: absolute;
+    background-color: var(--primary);
+    font-size: 1.2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: var(--font-family);
+
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    color: var(--white);
+    top: -4px;
+    right: 4px;
+}
+
+.user-avatar {
+    border-radius: 50%;
+    width: 32px;
+    height: 32px;
+    object-fit: cover;
+    cursor: pointer;
+    margin-left: 16px;
+}

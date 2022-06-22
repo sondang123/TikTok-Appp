@@ -1,9 +1,10 @@
-import logo from './logo.svg';
-import './App.css';
-import React from 'react';
-// import ReactRouter from './Reactrouter'
+// import './App.css';
+// import React from 'react';
+
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import { publicRotues } from '~/routes';
+import { publicRotues } from './routes/index.js';
+import DefaultLayout from '~/layouts/DefaultLayout/index.js';
+import { Fragment } from 'react';
 
 function App() {
     return (
@@ -11,8 +12,25 @@ function App() {
             <div className="App">
                 <Routes>
                     {publicRotues.map((route, index) => {
-                        const Page = route.Component;
-                        return <Route key={index} path={route.path} element={<Page />} />;
+                        let Layout = DefaultLayout;
+
+                        if (route.layout) {
+                            Layout = route.layout;
+                        } else if (route.layout === null) {
+                            Layout = Fragment;
+                        }
+                        const Page = route.component;
+                        return (
+                            <Route
+                                key={index}
+                                path={route.path}
+                                element={
+                                    <Layout>
+                                        <Page />
+                                    </Layout>
+                                }
+                            />
+                        );
                     })}
                 </Routes>
             </div>
